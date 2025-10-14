@@ -1,4 +1,23 @@
 import React, { useState } from 'react';
+import amigos from '../assets/Amigos.jpg';
+import amigos2 from '../assets/Amigos2.jpg';
+import amigos3 from '../assets/Amigos3.jpg';
+import amigos4 from '../assets/Amigos4.jpg';
+import swv1 from '../assets/SWV1.jpg';
+import swv12 from '../assets/SWV12.jpg';
+import swv13 from '../assets/SWV13.jpg';
+import swv14 from '../assets/SWV14.jpg';
+import ink from '../assets/Ink.jpg';
+import ink2 from '../assets/INK2.jpg';
+import ink3 from '../assets/INK3.jpg';
+import geo1 from '../assets/geo1.png';
+import geo3 from '../assets/geo3.png';
+import geo4 from '../assets/geo4.png';
+import rungo1 from '../assets/rungo1.jpg';
+
+
+
+
 
 const primaryColor = '#001F3F'; // Azul Marinho
 const accentColor = '#A00000'; // Vermelho Rubro
