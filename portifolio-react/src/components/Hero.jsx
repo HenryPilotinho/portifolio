@@ -1,5 +1,5 @@
 import React from 'react';
-
+import perfil from '../assets/perfil.jpg';
 const dadosPessoais = {
   // ... (Dados inalterados) ...
   nome: "Henrique Silva Sena",
@@ -10,12 +10,13 @@ const dadosPessoais = {
   conclusao: "Previsão: 06/2026",
   extensao: [
     { nome: "React Avançado", local: "Online", instituicao: "Udemy", horas: 60, data: "01/2024 - 03/2024" },
-    { nome: "Design Patterns em Java", local: "SP", instituicao: "Alura", horas: 40, data: "06/2023" },
+    { nome: "Cloud Digital Leader", local: "Online", instituicao: "Google Cloud", horas: 40, data: "06/2023" },
   ],
   linguagens: [
     { lingua: "Português", nivel: "Nativo" },
-    { lingua: "Inglês", nivel: "Avançado" },
+    { lingua: "Inglês", nivel: "Médio" },
     { lingua: "Espanhol", nivel: "Básico" },
+    { lingua: "japonês", nivel: "Básico" },
   ],
 };
 
@@ -40,7 +41,7 @@ function Hero() {
         textAlign: 'center'
       }}>
         <img 
-          src={"/src/assets/foto_placeholder.jpg"}
+          src={perfil}
           alt="Foto de Identificação"
           style={{ 
             width: '250px', 
@@ -68,7 +69,7 @@ function Hero() {
 
         <h3 style={{ color: primaryColor, marginTop: '25px', marginBottom: '10px' }}>Formação Acadêmica</h3>
         <p>
-          **{dadosPessoais.curso}**<br />
+          {dadosPessoais.curso}<br />
           {dadosPessoais.faculdade} | {dadosPessoais.inicio} - {dadosPessoais.conclusao}
         </p>
         
@@ -76,8 +77,8 @@ function Hero() {
         {dadosPessoais.extensao.map((curso, index) => (
           <div key={index} style={{ marginBottom: '15px', borderLeft: `3px solid ${primaryColor}`, paddingLeft: '10px' }}>
             <strong>{curso.nome}</strong> ({curso.horas}h)<br />
-            *Instituição:* {curso.instituicao} | *Local:* {curso.local}<br />
-            *Período:* {curso.data}
+            Instituição: {curso.instituicao} | Local: {curso.local}<br />
+            Período: {curso.data}
           </div>
         ))}
 

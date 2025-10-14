@@ -4,12 +4,12 @@ import React, { useState } from 'react';
 
 const projetosData = [
   // 6 projetos (os dados permanecem os mesmos)
-  { id: 1, titulo: "E-commerce Backend", imagem: "/src/assets/proj1.jpg", tecnologias: ["Node.js", "Express", "MongoDB", "Jest"], descricao: "Backend RESTful API para uma loja virtual completa, focada em performance e segurança.", github: "link_github_1", youtube: "link_youtube_1" },
-  { id: 2, titulo: "App de Notas Móvel", imagem: "/src/assets/proj2.jpg", tecnologias: ["React Native", "Expo", "SQLite"], descricao: "Aplicativo móvel para gerenciamento de notas com sincronização offline e autenticação.", github: "link_github_2", youtube: null },
-  { id: 3, titulo: "Dashboard Financeiro", imagem: "/src/assets/proj3.jpg", tecnologias: ["React", "D3.js", "Context API"], descricao: "Painel de controle interativo para visualização de dados financeiros em tempo real.", github: "link_github_3", youtube: "link_youtube_3" },
-  { id: 4, titulo: "Landing Page Dinâmica", imagem: "/src/assets/proj4.jpg", tecnologias: ["Gatsby", "GraphQL", "Tailwind CSS"], descricao: "Website estático e ultra-rápido, otimizado para SEO e conversão.", github: "link_github_4", youtube: null },
-  { id: 5, titulo: "Sistema de Votação", imagem: "/src/assets/proj5.jpg", tecnologias: ["Python", "Django", "PostgreSQL"], descricao: "Sistema de votação online com segurança e auditoria de votos.", github: "link_github_5", youtube: "link_youtube_5" },
-  { id: 6, titulo: "Clone UI (Netflix)", imagem: "/src/assets/proj6.jpg", tecnologias: ["Next.js", "Styled Components", "Firebase"], descricao: "Recriação da interface de usuário da Netflix, focada em fidelidade visual e responsividade.", github: "link_github_6", youtube: "link_youtube_6" },
+  { id: 1, titulo: "Amigos Do Bairro", imagem: "/src/assets/Amigos.jpg", tecnologias: ["HTML", "CSS", "JavaScript"], descricao: "Página expositiva de um coletivo da cidade de São Paulo", github: "https://github.com/HenryPilotinho/Amigos-do-bairro", youtube: "https://amigos-do-bairro.vercel.app" },
+  { id: 2, titulo: "Street Wise V1", imagem: "/src/assets/SWV1.jpg", tecnologias: ["React Native", "Expo", "SQLite"], descricao: "Aplicativo móvel para gerenciamento de notas com sincronização offline e autenticação.", github: "link_github_2", youtube: null },
+  { id: 3, titulo: "Street Wise/ Ink-dash", imagem: "/src/assets/Ink.jpg", tecnologias: ["React", "D3.js", "Context API"], descricao: "Painel de controle interativo para visualização de dados financeiros em tempo real.", github: "link_github_3", youtube: "link_youtube_3" },
+  { id: 4, titulo: "Geo-so app", imagem: "/src/assets/proj4.jpg", tecnologias: ["Gatsby", "GraphQL", "Tailwind CSS"], descricao: "Website estático e ultra-rápido, otimizado para SEO e conversão.", github: "link_github_4", youtube: null },
+  { id: 5, titulo: "Rungo-app", imagem: "/src/assets/proj5.jpg", tecnologias: ["Python", "Django", "PostgreSQL"], descricao: "Sistema de votação online com segurança e auditoria de votos.", github: "link_github_5", youtube: "link_youtube_5" },
+  
 ];
 
 const primaryColor = '#001F3F'; // Azul Marinho

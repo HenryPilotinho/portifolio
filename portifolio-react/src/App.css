@@ -55,6 +55,7 @@ html, body, #root {
 
 body {
     background-color: #700606; /* Cor de fundo base */
+    color: #050505;
 }
 
 .projetos-grid-container {
