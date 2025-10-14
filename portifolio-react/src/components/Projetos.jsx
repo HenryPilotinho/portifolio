@@ -1,21 +1,80 @@
 import React, { useState } from 'react';
 
-
-
-const projetosData = [
-  // 6 projetos (os dados permanecem os mesmos)
-  { id: 1, titulo: "Amigos Do Bairro", imagem: "/src/assets/Amigos.jpg", tecnologias: ["HTML", "CSS", "JavaScript"], descricao: "Página expositiva de um coletivo da cidade de São Paulo", github: "https://github.com/HenryPilotinho/Amigos-do-bairro", youtube: "https://amigos-do-bairro.vercel.app" },
-  { id: 2, titulo: "Street Wise V1", imagem: "/src/assets/SWV1.jpg", tecnologias: ["React Native", "Expo", "SQLite"], descricao: "Aplicativo móvel para gerenciamento de notas com sincronização offline e autenticação.", github: "link_github_2", youtube: null },
-  { id: 3, titulo: "Street Wise/ Ink-dash", imagem: "/src/assets/Ink.jpg", tecnologias: ["React", "D3.js", "Context API"], descricao: "Painel de controle interativo para visualização de dados financeiros em tempo real.", github: "link_github_3", youtube: "link_youtube_3" },
-  { id: 4, titulo: "Geo-so app", imagem: "/src/assets/proj4.jpg", tecnologias: ["Gatsby", "GraphQL", "Tailwind CSS"], descricao: "Website estático e ultra-rápido, otimizado para SEO e conversão.", github: "link_github_4", youtube: null },
-  { id: 5, titulo: "Rungo-app", imagem: "/src/assets/proj5.jpg", tecnologias: ["Python", "Django", "PostgreSQL"], descricao: "Sistema de votação online com segurança e auditoria de votos.", github: "link_github_5", youtube: "link_youtube_5" },
-  
-];
-
 const primaryColor = '#001F3F'; // Azul Marinho
 const accentColor = '#A00000'; // Vermelho Rubro
 
-// Componente para o Modal/Card Flutuante (INALETRADO, mantido para os detalhes)
+const projetosData = [
+  // 6 projetos (os dados permanecem os mesmos)
+  { 
+    id: 1, 
+    titulo: "Amigos Do Bairro", 
+    imagem: "/src/assets/Amigos.jpg", 
+    tecnologias: ["HTML", "CSS", "JavaScript"], 
+    descricao: "Página expositiva de um coletivo da cidade de São Paulo.", 
+    github: "https://github.com/HenryPilotinho/Amigos-do-bairro", 
+    Ativo: "https://amigos-do-bairro.vercel.app",
+    // NOVO CAMPO: GALERIA DE IMAGENS
+    galeria: [
+        "/src/assets/Amigos2.jpg", 
+        "/src/assets/Amigos3.jpg", 
+        "/src/assets/Amigos4.jpg",
+    ],
+  },
+  { 
+    id: 2, 
+    titulo: "Street Wise V1", 
+    imagem: "/src/assets/SWV1.jpg", 
+    tecnologias: ["React Native", "Expo", "SQLite"], 
+    descricao: "Aplicativo móvel para gerenciamento de notas com sincronização offline e autenticação.", 
+    github: "link_github_2", 
+    youtube: null,
+    // NOVO CAMPO: GALERIA DE IMAGENS (Exemplo)
+    galeria: [
+        "/src/assets/SWV1-tela1.jpg", 
+        "/src/assets/SWV1-tela2.jpg",
+    ],
+  },
+  { 
+    id: 3, 
+    titulo: "Street Wise/ Ink-dash", 
+    imagem: "/src/assets/Ink.jpg", 
+    tecnologias: ["React", "D3.js", "Context API"], 
+    descricao: "Painel de controle interativo para visualização de dados financeiros em tempo real.", 
+    github: "link_github_3", 
+    youtube: "link_youtube_3",
+    // NOVO CAMPO: GALERIA DE IMAGENS (Exemplo)
+    galeria: [
+        "/src/assets/Ink-dashboard.jpg", 
+        "/src/assets/Ink-charts.jpg",
+    ],
+  },
+  { 
+    id: 4, 
+    titulo: "Geo-so app", 
+    imagem: "/src/assets/proj4.jpg", 
+    tecnologias: ["Gatsby", "GraphQL", "Tailwind CSS"], 
+    descricao: "Website estático e ultra-rápido, otimizado para SEO e conversão.", 
+    github: "link_github_4", 
+    youtube: null,
+    // NOVO CAMPO: GALERIA DE IMAGENS (Vazio, se não houver mais fotos)
+    galeria: [], 
+  },
+  { 
+    id: 5, 
+    titulo: "Rungo-app", 
+    imagem: "/src/assets/proj5.jpg", 
+    tecnologias: ["Python", "Django", "PostgreSQL"], 
+    descricao: "Sistema de votação online com segurança e auditoria de votos.", 
+    github: "link_github_5", 
+    youtube: "link_youtube_5",
+    // NOVO CAMPO: GALERIA DE IMAGENS (Vazio, se não houver mais fotos)
+    galeria: [],
+  },
+  
+];
+
+
+// Componente para o Modal/Card Flutuante (MODIFICADO)
 const ProjetoModal = ({ projeto, onClose }) => {
   if (!projeto) return null;
 
@@ -30,9 +89,13 @@ const ProjetoModal = ({ projeto, onClose }) => {
       }}>
       <div style={{
           backgroundColor: '#FFFFFF', padding: '30px', borderRadius: '10px', 
-          width: '90%', maxWidth: '650px', position: 'relative', 
+          width: '90%', 
+          maxWidth: '850px', // <<< Aumentado para caber a galeria
+          position: 'relative', 
           boxShadow: '0 10px 25px rgba(0, 0, 0, 0.5)',
           borderTop: `8px solid ${accentColor}`,
+          maxHeight: '90vh', // Para garantir que caiba na tela
+          overflowY: 'auto', // Adiciona scroll se o modal for maior que a tela
         }}>
         <button onClick={onClose} style={{
             position: 'absolute', top: '15px', right: '15px', 
@@ -43,6 +106,36 @@ const ProjetoModal = ({ projeto, onClose }) => {
         <h2 style={{ color: primaryColor, marginBottom: '15px', borderBottom: `1px solid ${primaryColor}`, paddingBottom: '10px' }}>
           {projeto.titulo}
         </h2>
+        
+        {/* ======================================= */}
+        {/* NOVO BLOCO: GALERIA DE FOTOS DO PROJETO */}
+        {/* ======================================= */}
+        {projeto.galeria && projeto.galeria.length > 0 && (
+          <div style={{ 
+              display: 'flex', 
+              overflowX: 'auto', // Permite rolagem horizontal
+              gap: '15px', 
+              paddingBottom: '15px', 
+              marginBottom: '25px',
+              borderBottom: `1px solid #DDD` 
+          }}>
+            {projeto.galeria.map((url, index) => (
+              <img 
+                key={index} 
+                src={url} 
+                alt={`${projeto.titulo} - Captura ${index + 1}`} 
+                style={{ 
+                  flexShrink: 0, // Impede que a imagem encolha
+                  width: '600px', // Largura fixa para a visualização
+                  height: 'auto', 
+                  borderRadius: '5px',
+                  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+                }} 
+              />
+            ))}
+          </div>
+        )}
+        
         <p style={{ color: '#333', marginBottom: '25px', lineHeight: '1.6' }}>{projeto.descricao}</p>
         
         <h4 style={{ color: primaryColor, marginBottom: '10px' }}>Tecnologias Utilizadas</h4>
@@ -71,6 +164,12 @@ const ProjetoModal = ({ projeto, onClose }) => {
             <a href={projeto.youtube} target="_blank" rel="noopener noreferrer" 
                style={{ padding: '10px 20px', borderRadius: '5px', color: '#FFFFFF', textDecoration: 'none', fontWeight: 'bold', textAlign: 'center', backgroundColor: primaryColor }}>
               Ver Demo (YouTube)
+            </a>
+          )}
+          {projeto.Ativo && (
+            <a href={projeto.Ativo} target="_blank" rel="noopener noreferrer" 
+               style={{ padding: '10px 20px', borderRadius: '5px', color: '#FFFFFF', textDecoration: 'none', fontWeight: 'bold', textAlign: 'center', backgroundColor: primaryColor }}>
+              Ir para o Site
             </a>
           )}
         </div>
