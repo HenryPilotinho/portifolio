@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import amigos from '../assets/Amigos.jpg';
-import amigos2 from '../assets/Amigos2.jpg';
-import amigos3 from '../assets/Amigos3.jpg';
-import amigos4 from '../assets/Amigos4.jpg';
+import amigos2 from '../assets/amigos2.jpg';
+import amigos3 from '../assets/amigos3.jpg';
+import amigos4 from '../assets/amigos4.jpg';
 import swv1 from '../assets/SWV1.jpg';
 import swv12 from '../assets/SWV12.jpg';
 import swv13 from '../assets/SWV13.jpg';
