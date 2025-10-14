@@ -5,7 +5,7 @@ import amigos3 from '../assets/amigos3.jpg';
 import amigos4 from '../assets/amigos4.jpg';
 import swv1 from '../assets/SWV1.jpg';
 import swv12 from '../assets/SWV12.jpg';
-import swv13 from '../assets/SWV13.jpg';
+import swv13 from '../assets/swv13.jpg';
 import swv14 from '../assets/SWV14.jpg';
 import ink from '../assets/Ink.jpg';
 import ink2 from '../assets/INK2.jpg';
