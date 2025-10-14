@@ -24,51 +24,51 @@ const projetosData = [
     id: 2, 
     titulo: "Street Wise V1", 
     imagem: "/src/assets/SWV1.jpg", 
-    tecnologias: ["React Native", "Expo", "SQLite"], 
-    descricao: "Aplicativo móvel para gerenciamento de notas com sincronização offline e autenticação.", 
-    github: "link_github_2", 
-    youtube: null,
-    // NOVO CAMPO: GALERIA DE IMAGENS (Exemplo)
+    tecnologias: ["Node js", "JavaScript"], 
+    descricao: "Sistema de gerenciamento para um estudio de tatuagem.", 
+    github: "https://github.com/HenryPilotinho/tattoo-service-nodejs", 
     galeria: [
-        "/src/assets/SWV1-tela1.jpg", 
-        "/src/assets/SWV1-tela2.jpg",
+        "/src/assets/SWV12.jpg", 
+        "/src/assets/SWV13.jpg",
+        "/src/assets/SWV14.jpg",
     ],
   },
   { 
     id: 3, 
     titulo: "Street Wise/ Ink-dash", 
     imagem: "/src/assets/Ink.jpg", 
-    tecnologias: ["React", "D3.js", "Context API"], 
-    descricao: "Painel de controle interativo para visualização de dados financeiros em tempo real.", 
-    github: "link_github_3", 
-    youtube: "link_youtube_3",
-    // NOVO CAMPO: GALERIA DE IMAGENS (Exemplo)
+    tecnologias: ["Python", "JavaScript", "MongoDB"], 
+    descricao: "Segunda versão do sistema de gerenciamento para um estudio de tatuagem. Tecnologias diferentes e um foco maior na usabilidade e desempenho do sistema.", 
+    github: "https://github.com/TechWeavers/PI-StreetWise-ERP-3Semestre", 
     galeria: [
-        "/src/assets/Ink-dashboard.jpg", 
-        "/src/assets/Ink-charts.jpg",
+        "/src/assets/INK2.jpg", 
+        "/src/assets/INK3.jpg",
     ],
   },
   { 
     id: 4, 
     titulo: "Geo-so app", 
-    imagem: "/src/assets/proj4.jpg", 
-    tecnologias: ["Gatsby", "GraphQL", "Tailwind CSS"], 
-    descricao: "Website estático e ultra-rápido, otimizado para SEO e conversão.", 
-    github: "link_github_4", 
-    youtube: null,
-    // NOVO CAMPO: GALERIA DE IMAGENS (Vazio, se não houver mais fotos)
-    galeria: [], 
+    imagem: "/src/assets/geo1.png", 
+    tecnologias: ["React", "JavaScript", "Spring Boot"], 
+    descricao: "Aplicação web para uma empresa de consultoria em limpeza urbana", 
+    github: "https://github.com/GreeeenDevs/geoso-app", 
+    galeria: [
+        "/src/assets/geo3.png",
+        "/src/assets/geo4.png",
+    ], 
   },
   { 
     id: 5, 
     titulo: "Rungo-app", 
-    imagem: "/src/assets/proj5.jpg", 
-    tecnologias: ["Python", "Django", "PostgreSQL"], 
-    descricao: "Sistema de votação online com segurança e auditoria de votos.", 
-    github: "link_github_5", 
-    youtube: "link_youtube_5",
-    // NOVO CAMPO: GALERIA DE IMAGENS (Vazio, se não houver mais fotos)
-    galeria: [],
+    imagem: "/src/assets/rungo1.jpg", 
+    tecnologias: ["React Native", "FireBase", "Node js"], 
+    descricao: "Aplicativo de bichinho virtual para gameficação de atividades fisícas",
+    github: "https://github.com/GreeeenDevs/rungo-app", 
+    youtube: "https://www.youtube.com/shorts/d7CnZjd0z44",
+    
+    galeria: [
+        
+    ],
   },
   
 ];
